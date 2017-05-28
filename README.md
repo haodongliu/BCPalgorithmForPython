@@ -28,6 +28,28 @@ IEEE Transactions on Information Forensics & Security, 8(12), 2046-2058.
 > I was developed this project on Ubuntu 17.04， and I used three encrypted library， gmp，pbc，and charm.
 > Ubuntu has their own python environment, but I don't recommend to use the default Python，there are too many package you need to install in the following steps，so I recommend the anaconda, it already installed many useful packages. link: https://www.continuum.io/downloads/   For Chinese mainland developer, you can download anaconda from "tuna" https://mirrors.tuna.tsinghua.edu.cn/anaconda/
 
-### GMP library
->
+### environment
+> sudo apt-get install m4
+> sudo apt-get install pyparing (unnecessary)
+> sudo apt-get install openssl-dev
+> sudo apt-get install python-dev (necessary)
 
+### GMP library
+> For Ubuntu, you can directly install the gmp library with command “ sudo apt-get install libgmp-dev”
+> For other linux system，you need to download the gmp source code and make. I have provided the source code in the folder “gmp-6.1.1”
+> cd gmp-6.1.1  excute
+> ./configure 
+> make
+> make install
+
+### PBC library
+> ./configure  
+> make
+> make install
+> ln -s /usr/local/lib/libpbc.so.1 /usr/lib
+
+### charm Library (must installed openssl-dev,python-dev)
+> ./configure.sh (notice that if you use anaconda, you need to change the python path in configure.sh line 134, change it to your anaconda's python path)
+> make build
+> make install
+> ldconfig
