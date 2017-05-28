@@ -72,5 +72,51 @@ The BCP Algorithm For Python2.7
 
 ## How To Use
 ### BCP SetUP
-> 
+>  For BCP algorithm, the first thing we should to do is setup -- generate the public key and master key.
+>>keyGen() Function, **def keyGen(secparam = 1024,paramPath = 'param',mkPath = 'mk')** it will generate:
+
+     >>>1. public parameters: N2,N,k,g (write in to paramPath )
+     
+     >>>2. master key (write into paramPath)
+>
+>  After generated the public parameters, you can instantiate a BCP context by using parameters
+>  bcp = genBCPcontext(paramPath = 'param')
+
+### Generate KEYS
+> And the pk and sk will be generated when you got the BCP context
+> pk,sk = genKeyPair(bcp,  keyPairPath = 'keyPair')
+>> generate pk and sk ( write into keyPairPath)
+>
+> When you get the key pair, you don't need to generate them again the next time, you can directly read it from file
+> > pk,sk = readKeyPairFromFile(keyPairPath = 'keyPair')
+	
+### Encrypt
+> You got pk, and BCP context now, so you can encrypt the number now,
+	>> ciphertext1 = bcp.Encrypt(pk,12)
+	>> ciphertext2 = bcp.Encrypt(pk,18)
+	>> print ciphertext1 
+	>>#it will show two line ciphertext
+
+### Decrypt 
+> there are two types decypt, decrypted by sk and decrypted by mk
+> >with sk
+> >>m = bcp.Decrypt(ciphertext1,sk)
+> >>print m               
+> >>#m = 12
+> >>
+>>with MK
+>>> m = DecryptMK(ciphertext2,pk)
+>>> print  m
+>>>  #m = 18
+
+### Computation 
+>Multiply
+>> ciphertext3 = bcp.multiply(ciphertext1,ciphertext2)
+>> print Decrypt(ciphertext3,sk)
+>>  #30
+>>
+>Exponentiate
+>>ciphertext3 = bcp.exponentiate(ciphertext3, 2)
+>>print Decrypt(ciphertext3,sk)
+>>#60 (30*2)  
 
