@@ -52,6 +52,7 @@ The BCP Algorithm For Python2.7
 > make install
 
 ### PBC library
+
 > ./configure  
 
 > make
@@ -69,5 +70,7 @@ The BCP Algorithm For Python2.7
 
 > ldconfig
 
-## How To use
+## How To Use
 ### BCP SetUP
+> 
+
