@@ -11,9 +11,9 @@ The BCP Algorithm For Python2.7
 > **BCP** is an Additive Homomorphic Cryptosystem. besides, it has a special property which offers two independent decryption mechanisms, The second decryption mechanism decrypts given ciphertext successfully if and only if a certain master secret key is known.
 
 #### The BCP algorithm and its properties
-![BCP][1]
+![image](http://github.com/haodongliu/BCPalgorithmForPython/raw/master/BCPEncrypt/img/BCP1.png)
 
-![BCP][2]
+![image](http://github.com/haodongliu/BCPalgorithmForPython/raw/master/BCPEncrypt/img/BCP2.png)
 
 > To know more about the BCP algorithm and its properties, I highly recommend you to read the original paper
  1. Bresson, E., Catalano, D., Pointcheval, D.: A simple public key cryptosystem with a double trapdoor decryption mechanism and its applications. In: ASIACRYPT. LNCS, vol.2894, pp. 37–54. Springer (2003).
@@ -23,5 +23,3 @@ IEEE Transactions on Information Forensics & Security, 8(12), 2046-2058.
 > And also my paper (IEEE DSC on workshop PBD 2017)
 > Time series discord discovery under Multi-party Privacy Preserving
 
-[1]: blob:http://markdown.xiaoshujiang.com/fb9ce24f-72e1-4705-b4bb-a58f360499c6
-[2]: blob:http://markdown.xiaoshujiang.com/19e6b558-e4b9-4e42-95c8-ec0c6dc34ac1
